@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ハノン スケール選択</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .scale {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ハノンのスケールをランダムに表示</h1>
+    <button onclick="showRandomScale()">ランダムスケールを表示</button>
+
+    <div class="scale" id="scaleDisplay"></div>
+
+    <script>
+        // メジャーとマイナーのスケールを追加
+        const majorScales = [
+            "C dur / a moll",
+            "F dur / d moll",
+            "B dur / g moll",
+            "Es dur / c moll",
+            "As dur / f moll",
+            "Des dur / b moll",
+            "Ges dur / es moll",
+            "H dur / gis moll",
+            "E dur / cis moll",
+            "A dur / fis moll",
+            "D dur / h moll",
+            "G dur / e moll",
+        ];
+
+        // メジャーまたはマイナーからランダムに選択して表示する関数
+        function showRandomScale() {
+            const allScales = [...majorScales];  // メジャーとマイナーのスケールを結合
+            const randomIndex = Math.floor(Math.random() * allScales.length);
+            const selectedScale = allScales[randomIndex];
+            document.getElementById("scaleDisplay").textContent = `${selectedScale}`;
+        }
+    </script>
+
+</body>
+</html>
